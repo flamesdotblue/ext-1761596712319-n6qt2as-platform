@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import React from 'react';
+import StatusBar from './components/StatusBar';
+import Header from './components/Header';
+import PromoHero from './components/PromoHero';
+import QuickCategories from './components/QuickCategories';
+import MainContent from './components/MainContent';
+import FeaturedVenues from './components/FeaturedVenues';
+import BottomNav from './components/BottomNav';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="w-full min-h-screen bg-[#F5F5F5] flex items-start justify-center py-6">
+      {/* iPhone 14 Pro artboard approximate aspect: 1080x2340 (2:~4.33) */}
+      <div className="relative w-[360px] h-[780px] bg-white rounded-[24px] shadow-xl overflow-hidden border border-gray-100">
+        <StatusBar />
+        <Header />
+        <div className="px-4">
+          <PromoHero />
         </div>
+        <QuickCategories />
+        <div className="px-4">
+          <MainContent />
+          <FeaturedVenues />
+        </div>
+        <BottomNav />
       </div>
     </div>
-  )
+  );
 }
-
-export default App
